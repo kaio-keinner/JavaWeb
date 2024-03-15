@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <h:head>
+        <title>TArefa 1 - C</title>
+    </h:head>
+    <h:body>
+         <h:form>
+        <p:panel header="Informe o investimento inicial, a taxa de juros anual e o período">
+            <h:outputLabel for="investimentoInicial" value="Investimento Inicial:" />
+            <p:inputText id="investimentoInicial" value="#{exer1c.investimentoInicial}" required="true" />
+            <h:outputLabel for="taxaJurosAnual" value="Taxa de Juros Anual:" />
+            <p:inputText id="taxaJurosAnual" value="#{exer1c.taxaJurosAnual}" required="true" />
+            <h:outputLabel for="periodo" value="Período (em anos):" />
+            <p:inputText id="periodo" value="#{exer1c.periodo}" required="true" />
+            <p:commandButton value="Calcular Investimento" action="#{exer1c.calculodocapeta()}" update="result" />
+        </p:panel>
+        <p:panel id="result" header="Resultado">
+            <p:column headerText="Descrição">
+                <h:outputText value="#{exer1c.calculodocapeta()}" />
+            </p:column>
+            <h:outputText value="#{exer1c.resultado}" />
+        </p:panel>
+        <p:button value="Voltar para a tela inicial" outcome="index" />
+    </h:form>
+    </h:body>
+</html>
