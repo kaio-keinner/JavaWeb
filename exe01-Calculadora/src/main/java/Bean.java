@@ -20,8 +20,12 @@ public class Bean implements Serializable {
     
     
     public void btSoma(ActionEvent a){
-        setNum1(Double.parseDouble(getVisor()));
-        setOp("+");
+        //double temp= getNum1();
+        if(!getVisor().equals("0")){
+            setVisor(" ");
+           getOp().equals("+");
+        }
+        
     }
     
     public void btIgual(ActionEvent a){
